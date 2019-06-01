@@ -25,9 +25,9 @@ exports.leftMost = (array, value) => {
     middle = Math.floor((left + right) / 2);
     if (array[middle] < value) {
       left = middle + 1;
-      continue;
+    } else {
+      right = middle;
     }
-    right = middle;
   }
   return left;
 };

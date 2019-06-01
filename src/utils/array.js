@@ -1,31 +1,4 @@
 /**
- * Concat two arrays using indexes
- * @param {Array<number>} array
- * @param {Array<number>} arrayToConcat
- * @param {Number} minIndex start index in array
- * @param {Number} maxIndex finish index in array
- */
-exports.concatByIndexes = (array, arrayToConcat, minIndex, maxIndex) => {
-  if (minIndex === maxIndex) {
-    return replaceBySameIndexes(array, arrayToConcat, minIndex);
-  }
-  return replaceByDifferentIndexes(array, arrayToConcat, minIndex, maxIndex);
-};
-
-/**
- * Concat two arrays using indexes
- * @param {Array<number>} array
- * @param {Array<number>} arrayToConcat
- * @param {Number} minIndex start index in array
- * @param {Number} maxIndex finish index in array
- */
-exports.removeByIndexes = (array, arrayToConcat, minIndex, maxIndex) => {
-  if (minIndex === maxIndex) {
-    return removeBySameIndexes(array, arrayToConcat, minIndex);
-  }
-  return removeByDifferentIndexes(array, arrayToConcat, minIndex, maxIndex);
-};
-/**
  * Concat two arrays with same indexes
  * @param {Array<number>} array
  * @param {Array<number>} arrayToConcat
@@ -124,3 +97,30 @@ function removeBySameIndexes(array, arrayToConcat, index) {
     ...array.slice(nextIndex, array.length)
   ];
 }
+/**
+ * Concat two arrays using indexes
+ * @param {Array<number>} array
+ * @param {Array<number>} arrayToConcat
+ * @param {Number} minIndex start index in array
+ * @param {Number} maxIndex finish index in array
+ */
+exports.concatByIndexes = (array, arrayToConcat, minIndex, maxIndex) => {
+  if (minIndex === maxIndex) {
+    return replaceBySameIndexes(array, arrayToConcat, minIndex);
+  }
+  return replaceByDifferentIndexes(array, arrayToConcat, minIndex, maxIndex);
+};
+
+/**
+ * Concat two arrays using indexes
+ * @param {Array<number>} array
+ * @param {Array<number>} arrayToConcat
+ * @param {Number} minIndex start index in array
+ * @param {Number} maxIndex finish index in array
+ */
+exports.removeByIndexes = (array, arrayToConcat, minIndex, maxIndex) => {
+  if (minIndex === maxIndex) {
+    return removeBySameIndexes(array, arrayToConcat, minIndex);
+  }
+  return removeByDifferentIndexes(array, arrayToConcat, minIndex, maxIndex);
+};

@@ -5,6 +5,11 @@ class RangeList {
   constructor() {
     this.ranges = []; // should be sorted
   }
+
+  /**
+  * static helper to validate range
+  * @param {Array<number>} range - Array of two integers that specify beginning and end of range.
+  */
   static checkRange(range) {
     if (!Array.isArray(range)) {
       throw Error('Range must be of type array!');
@@ -17,6 +22,7 @@ class RangeList {
       throw Error('Max should be bigger than min in range!');
     }
   }
+
   /**
    * Adds a range to the list
    * @param {Array<number>} range - Array of two integers that specify beginning and end of range.
@@ -59,9 +65,9 @@ class RangeList {
     for (let index = 0; index < rangesLength; index += 2) {
       if (!output) {
         output = `[${this.ranges[index]}, ${this.ranges[index + 1]})`;
-        continue;
+      } else {
+        output = `${output} [${this.ranges[index]}, ${this.ranges[index + 1]})`;
       }
-      output = `${output} [${this.ranges[index]}, ${this.ranges[index + 1]})`;
     }
     console.log(output);
   }
